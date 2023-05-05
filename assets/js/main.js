@@ -74,3 +74,41 @@ function resetarCards(isMatch = false) {
 cards.forEach(card => {
   card.addEventListener('click', flipCard);
 });
+
+// Janela modal **********************************
+// Obtém a janela modal  para abri-la
+let modal = document.getElementById('myModal');
+let closeBtn = document.getElementsByClassName('close')[0];
+const form = document.getElementById('myForm');
+const header = document.getElementById('header');
+
+// Quando o usuário clicar no botão, abre a janela modal
+window.onload = function () {
+  modal.style.display = 'block';
+};
+
+// Quando o usuário clicar no botão de fechar, fecha a janela modal
+closeBtn.onclick = function () {
+  modal.style.display = 'none';
+};
+
+// Quando o usuário clicar fora da janela, fecha a janela modal
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+};
+
+function putName(name = 'Anônimo') {
+  header.innerHTML = `Olá ${name}, bom jogo!`;
+  return null;
+}
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  modal.style.display = 'none';
+  const inputNome = document.querySelector('#nome');
+  const nome = inputNome.value;
+
+  putName(nome);
+});

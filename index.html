@@ -10,7 +10,27 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header></header>
+    <header id="header"></header>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- Botão de fechar a janela -->
+        <h2>Informe seu nome</h2>
+        <form id="myForm">
+          <label for="nome">Nome:</label>
+          <input
+            type="text"
+            id="nome"
+            class="input-name"
+            name="nome"
+            placeholder="Seu nome aqui =D"
+            required
+          />
+          <br /><br />
+          <input type="submit" value="Enviar" />
+        </form>
+      </div>
+    </div>
     <section role="main" id="cardboard" class="card-board"></section>
     <footer></footer>
     <script src="assets/js/main.js
